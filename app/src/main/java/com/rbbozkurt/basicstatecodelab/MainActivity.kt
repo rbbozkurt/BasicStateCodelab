@@ -40,7 +40,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 
 @Preview(showBackground = true)
 @Composable
-fun WelnessScreenPreview() {
+fun WellnessScreenPreview() {
     BasicStateCodelabTheme {
         WellnessScreen()
     }
