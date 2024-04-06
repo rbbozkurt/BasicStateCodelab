@@ -18,23 +18,9 @@ import androidx.compose.ui.unit.dp
 import com.rbbozkurt.basicstatecodelab.ui.theme.data.WellnessTask
 
 @Composable
-fun WellnessTaskItem(taskName: String, modifier: Modifier = Modifier, onCloseTask: () -> Unit) {
-
-    var checkedState by rememberSaveable { mutableStateOf(false) }
-
-    WellnessTaskItem(
-        taskName = taskName,
-        isChecked = checkedState,
-        onCheckedChange = { newValue -> checkedState = newValue },
-        onClose = onCloseTask, // we will implement this later!
-        modifier = modifier,
-    )
-}
-
-@Composable
 fun WellnessTaskItem(
     taskName: String,
-    isChecked: Boolean,
+    checked: Boolean,
     onCheckedChange: (Boolean) -> Unit,
     onClose: () -> Unit,
     modifier: Modifier = Modifier
@@ -49,7 +35,7 @@ fun WellnessTaskItem(
             text = taskName
         )
         Checkbox(
-            checked = isChecked,
+            checked = checked,
             onCheckedChange = onCheckedChange
         )
         IconButton(onClick = onClose) {
